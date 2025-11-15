@@ -1,0 +1,355 @@
+{
+    "Math": {
+        "easy": [
+            ["What is the sum of angles in a triangle?","180°","360°","180°"],
+            ["Which of these is a prime number?","11","15","11"],
+            ["What is the next number in the sequence 2, 4, 6, 8?","10","12","10"],
+            ["Which shape has four equal sides and four right angles?","Square","Rectangle","Square"],
+            ["What is 0 multiplied by any number?","0","1","0"],
+            ["Which of these is an even number?","7","8","8"],
+            ["If you divide 20 by 5, what is the result?","4","5","4"],
+            ["Which number is smaller: 0.5 or 0.13?","0.5","0.13","0.13"],
+            ["How many sides does a pentagon have?","5","6","5"],
+            ["Which is greater: 3/4 or 1/2?","3/4","1/2","3/4"]
+        ],
+        "medium": [
+            ["Which of these is irrational?","√2","√9","√2"],
+            ["What is the value of 2 to the power of 3?","8","6","8"],
+            ["If x+y=10 and x=6, what is y?","4","3","4"],
+            ["Which statement is always true for even numbers?","Sum of two evens is even","Sum of two evens is odd","Sum of two evens is even"],
+            ["If all roses are flowers, and some flowers fade quickly, can some roses fade quickly?","Yes","No","Yes"],
+            ["Which of these shapes has rotational symmetry of 180°?","Rectangle","Triangle","Rectangle"],
+            ["If today is Monday, what day will it be in 20 days?","Sunday","Tuesday","Sunday"],
+            ["Which of the following is a composite number?","9","7","9"],
+            ["What is the next number in the series 1, 1, 2, 3, 5, 8?","13","12","13"],
+            ["If the sides of a right triangle are 3 and 4, what is the hypotenuse?","5","6","5"]
+        ],
+        "hard": [
+            ["Which is true: All squares are rectangles but not all rectangles are squares?","True","False","True"],
+            ["If a function is injective, each output has?","Exactly one input","At least one input","Exactly one input"],
+            ["Which of these is not a prime number?","1","13","1"],
+            ["If n! means factorial, what is 0!?","1","0","1"],
+            ["Which statement is a tautology?","p or not p","p and not p","p or not p"],
+            ["A set with no elements is called?","Empty set","Singleton","Empty set"],
+            ["Which is true for the sum of angles in any quadrilateral?","360°","180°","360°"],
+            ["Which is a valid logical implication?","If p then q","If p and not q then p","If p then q"],
+            ["Is number 117 prime?","Yes","No","No"],
+            ["Which number is greater?","50^60","60^50","50^60"]
+        ],
+        "extreme": [
+            ["What is the solution set of x²+1=0 over real numbers?","No solution","1 and -1","No solution"],
+            ["If a function is bijective, it is both?","Injective and Surjective","Only Injective","Injective and Surjective"],
+            ["Which number is transcendental?","π","√4","π"],
+            ["What is the sum of an infinite geometric series with |r|<1?","a/(1-r)","a*r","a/(1-r)"],
+            ["If two events are independent, what is P(A and B)?","P(A)*P(B)","P(A)+P(B)","P(A)*P(B)"],
+            ["Which of these is a well-ordering property?","Every non-empty subset has a least element","Subset must be finite","Every non-empty subset has a least element"],
+            ["If the limit of f(x) as x→∞ is L, what does it mean?","f(x) approaches L as x increases","f(x) equals L for all x","f(x) approaches L as x increases"],
+            ["Which statement defines a prime number correctly?","Exactly two positive divisors","Divisible by 1 only","Exactly two positive divisors"],
+            ["If a+b>c and b+c>a, what else must be true for triangle sides?","a+c>b","Nothing else necessarily","a+c>b"],
+            ["What is the cardinality of the set of natural numbers?","Uncountable","Countable","Countable"]
+        ]
+    },
+    "Science": {
+        "easy": [
+            ["Which element has the atomic number 6?","Carbon","Oxygen","Carbon"],
+            ["What is the main gas found in the Earth's atmosphere?","Nitrogen","Oxygen","Nitrogen"],
+            ["Which organelle is responsible for energy production in cells?","Mitochondria","Ribosome","Mitochondria"],
+            ["What phenomenon explains why the sky is blue?","Scattering of light","Reflection","Scattering of light"],
+            ["Which of these is a chemical change?","Rusting iron","Melting ice","Rusting iron"],
+            ["What is the acceleration due to gravity on Earth approximately?","9.8 m/s²","10 m/s²","9.8 m/s²"],
+            ["Which macromolecule stores genetic information?","DNA","Protein","DNA"],
+            ["What is the chemical formula for table salt?","NaCl","KCl","NaCl"],
+            ["What is the primary source of energy for the Earth?","Sun","Moon","Sun"],
+            ["Which part of the eye controls how much light enters?","Pupil","Lens","Pupil"]
+        ],
+        "medium": [
+            ["Which type of bond involves sharing electrons?","Covalent","Ionic","Covalent"],
+            ["Which subatomic particle has a negative charge?","Electron","Proton","Electron"],
+            ["What is the law stating that energy cannot be created or destroyed?","Conservation of Energy","Newton's First Law","Conservation of Energy"],
+            ["Which type of cell division produces gametes?","Meiosis","Mitosis","Meiosis"],
+            ["What is the most abundant element in the universe?","Hydrogen","Oxygen","Hydrogen"],
+            ["Which organelle synthesizes proteins?","Ribosome","Golgi apparatus","Ribosome"],
+            ["What is the main function of enzymes?","Catalyze chemical reactions","Store energy","Catalyze chemical reactions"],
+            ["Which force acts between charged particles?","Electrostatic force","Gravitational force","Electrostatic force"],
+            ["Which gas is released by plants during photosynthesis?","Oxygen","Carbon Dioxide","Oxygen"],
+            ["What is the SI unit of force?","Newton","Joule","Newton"]
+        ],
+        "hard": [
+            ["Which principle explains why ships float?","Archimedes’ Principle","Pascal's Law","Archimedes’ Principle"],
+            ["What is the difference between an ionic and a covalent bond?","Ionic transfers electrons, covalent shares electrons","Both share electrons","Ionic transfers electrons, covalent shares electrons"],
+            ["What is the second law of thermodynamics about?","Entropy increases in isolated systems","Energy is conserved","Entropy increases in isolated systems"],
+            ["Which particle mediates the strong nuclear force?","Gluon","Photon","Gluon"],
+            ["Which vitamin is produced in the skin by sunlight?","Vitamin D","Vitamin C","Vitamin D"],
+            ["What is the main type of RNA that carries amino acids to the ribosome?","tRNA","mRNA","tRNA"],
+            ["Which type of lens converges light rays?","Convex","Concave","Convex"],
+            ["What is the pH of pure water at 25°C?","7","0","7"],
+            ["Which gas is a greenhouse gas but not directly involved in respiration?","Carbon dioxide","Oxygen","Carbon dioxide"],
+            ["Which principle states that the pressure of a gas is inversely proportional to its volume at constant temperature?","Boyle's Law","Charles's Law","Boyle's Law"]
+        ],
+        "extreme": [
+            ["Which principle explains why the pressure at a point in a fluid is transmitted equally in all directions?","Pascal's Principle","Archimedes' Principle","Pascal's Principle"],
+            ["In photosynthesis, what is the final electron acceptor in the light-dependent reactions?","NADP+","Oxygen","NADP+"],
+            ["Which type of chemical reaction involves the transfer of electrons from one species to another?","Redox reaction","Acid-base reaction","Redox reaction"],
+            ["In quantum mechanics, which principle states that certain pairs of properties cannot both be precisely known?","Heisenberg Uncertainty Principle","Pauli Exclusion Principle","Heisenberg Uncertainty Principle"],
+            ["Which fundamental force is responsible for beta decay in radioactive isotopes?","Weak nuclear force","Strong nuclear force","Weak nuclear force"],
+            ["Which law in thermodynamics implies that no process can convert all heat into work?","Second law of thermodynamics","First law of thermodynamics","Second law of thermodynamics"],
+            ["In genetics, what is the process called where mRNA is synthesized from a DNA template?","Transcription","Translation","Transcription"],
+            ["Which particle is exchanged in electromagnetic interactions according to quantum field theory?","Photon","Gluon","Photon"],
+            ["Which reaction type forms a peptide bond between amino acids?","Condensation reaction","Hydrolysis","Condensation reaction"],
+            ["Which astrophysical principle explains why stars on the main sequence maintain equilibrium between gravity and radiation pressure?","Hydrostatic equilibrium","Kepler's third law","Hydrostatic equilibrium"]
+        ]
+    },
+    "Geography": {
+        "easy": [
+            ["Which continent is Egypt in?","Africa","Asia","Africa"],
+            ["Which ocean is the largest on Earth?","Pacific","Atlantic","Pacific"],
+            ["What is the capital of France?","Paris","Lyon","Paris"],
+            ["Mount Everest is located in which mountain range?","Himalayas","Andes","Himalayas"],
+            ["Which country has the largest land area?","Russia","Canada","Russia"],
+            ["Which river is the longest in the world?","Nile","Amazon","Nile"],
+            ["Which desert is the largest hot desert on Earth?","Sahara","Gobi","Sahara"],
+            ["Which continent is Australia considered part of?","Oceania","Asia","Oceania"],
+            ["Which country is famous for the city of Tokyo?","Japan","China","Japan"],
+            ["Which U.S. state is known for the Grand Canyon?","Arizona","Nevada","Arizona"]
+        ],
+        "medium": [
+            ["Which European country has the most time zones?","France","Russia","France"],
+            ["Which mountain is the tallest in the Western Hemisphere?","Aconcagua","Denali","Aconcagua"],
+            ["The Danube River flows into which body of water?","Black Sea","Baltic Sea","Black Sea"],
+            ["Which African country was formerly called Abyssinia?","Ethiopia","Sudan","Ethiopia"],
+            ["Which line divides the Earth into Northern and Southern Hemispheres?","Equator","Prime Meridian","Equator"],
+            ["Which country contains the city of Marrakech?","Morocco","Algeria","Morocco"],
+            ["Which U.S. river forms part of the border between Texas and Mexico?","Rio Grande","Mississippi","Rio Grande"],
+            ["Which is the smallest country in the world by land area?","Vatican City","Monaco","Vatican City"],
+            ["Which Asian country has the most population?","China","India","China"],
+            ["Which strait separates Europe from Asia?","Bosporus","Dardanelles","Bosporus"]
+        ],
+        "hard": [
+            ["Which country has the longest coastline in the world?","Canada","Australia","Canada"],
+            ["Which desert spans parts of China and Mongolia?","Gobi","Karakum","Gobi"],
+            ["Which river flows through Baghdad?","Tigris","Euphrates","Tigris"],
+            ["Which African lake is the largest by surface area?","Lake Victoria","Lake Tanganyika","Lake Victoria"],
+            ["Which U.S. state is the only one with a panhandle extending westward?","Florida","Texas","Florida"],
+            ["Which country is home to the city of Timbuktu?","Mali","Niger","Mali"],
+            ["Which mountain range forms the natural border between France and Spain?","Pyrenees","Alps","Pyrenees"],
+            ["Which sea is shrinking due to water diversion for irrigation?","Aral Sea","Dead Sea","Aral Sea"],
+            ["Which river forms part of the border between Germany and Switzerland?","Rhine","Danube","Rhine"],
+            ["Which city is farther north: Oslo or Stockholm?","Oslo","Stockholm","Oslo"]
+        ],
+        "extreme": [
+            ["Which African country has the most pyramids?","Sudan","Egypt","Sudan"],
+            ["Which river has the greatest discharge volume in the world?","Amazon","Congo","Amazon"],
+            ["Which country has a capital city located at the highest altitude?","Bolivia","Nepal","Bolivia"],
+            ["Which island nation is the largest by area in the Caribbean?","Cuba","Hispaniola","Cuba"],
+            ["Which desert is cold and located in Antarctica?","Antarctic Desert","Gobi","Antarctic Desert"],
+            ["Which country has more lakes than any other in the world?","Canada","Finland","Canada"],
+            ["Which European country has the most islands?","Sweden","Greece","Sweden"],
+            ["Which river passes through the most countries?","Danube","Nile","Danube"],
+            ["Which Asian country has the greatest variation in climate from tropical to subarctic?","China","India","China"],
+            ["Which capital city is located closest to the Prime Meridian?","London","Lisbon","London"]
+        ]
+    },
+    "History": {
+        "easy": [
+            ["Who was the first President of the United States?","George Washington","Abraham Lincoln","George Washington"],
+            ["In which year did World War II end?","1945","1939","1945"],
+            ["Which ancient civilization built the pyramids?","Egyptians","Romans","Egyptians"],
+            ["Who discovered America in 1492?","Christopher Columbus","Vasco da Gama","Christopher Columbus"],
+            ["Which empire was ruled by Julius Caesar?","Roman Empire","Ottoman Empire","Roman Empire"],
+            ["Who was the leader of Nazi Germany during WWII?","Adolf Hitler","Joseph Stalin","Adolf Hitler"],
+            ["Which country launched the first human into space?","Soviet Union","USA","Soviet Union"],
+            ["What wall divided Berlin from 1961 to 1989?","Berlin Wall","Great Wall of China","Berlin Wall"],
+            ["Which revolution overthrew the monarchy in France?","French Revolution","Russian Revolution","French Revolution"],
+            ["Who was the first man to walk on the Moon?","Neil Armstrong","Buzz Aldrin","Neil Armstrong"]
+        ],
+        "medium": [
+            ["Which war was fought between the North and South regions in the United States?","Civil War","World War I","Civil War"],
+            ["Which dynasty built the Forbidden City in Beijing?","Ming Dynasty","Qing Dynasty","Ming Dynasty"],
+            ["Which treaty ended World War I?","Treaty of Versailles","Treaty of Paris","Treaty of Versailles"],
+            ["Who was the first emperor of China?","Qin Shi Huang","Han Wudi","Qin Shi Huang"],
+            ["Which event started in 1789 in France and led to major political change?","French Revolution","Industrial Revolution","French Revolution"],
+            ["Who led the Indian independence movement against British rule?","Mahatma Gandhi","Jawaharlal Nehru","Mahatma Gandhi"],
+            ["Which empire was led by Genghis Khan?","Mongol Empire","Ottoman Empire","Mongol Empire"],
+            ["What was the main cause of the American Revolutionary War?","Taxation without representation","Slavery","Taxation without representation"],
+            ["Which ancient city was buried by the eruption of Mount Vesuvius?","Pompeii","Athens","Pompeii"],
+            ["Who was the British Prime Minister during most of World War II?","Winston Churchill","Neville Chamberlain","Winston Churchill"]
+        ],
+        "hard": [
+            ["Which treaty ended the Thirty Years' War in 1648?","Peace of Westphalia","Treaty of Utrecht","Peace of Westphalia"],
+            ["Which civilization built Machu Picchu?","Inca","Maya","Inca"],
+            ["Which event marked the beginning of the Great Depression in 1929?","Stock Market Crash","Treaty of Versailles","Stock Market Crash"],
+            ["Who was the first ruler of the Ottoman Empire?","Osman I","Suleiman the Magnificent","Osman I"],
+            ["Which battle in 1066 changed the course of English history?","Battle of Hastings","Battle of Agincourt","Battle of Hastings"],
+            ["Which revolution led to the rise of the Bolsheviks in Russia?","October Revolution","February Revolution","October Revolution"],
+            ["Which empire was known for its road system connecting South America?","Inca Empire","Aztec Empire","Inca Empire"],
+            ["Who was the leader of the Soviet Union during World War II?","Joseph Stalin","Vladimir Lenin","Joseph Stalin"],
+            ["Which event triggered World War I?","Assassination of Archduke Franz Ferdinand","Invasion of Poland","Assassination of Archduke Franz Ferdinand"],
+            ["Which ancient city was a major center of the Byzantine Empire?","Constantinople","Rome","Constantinople"]
+        ],
+        "extreme": [
+            ["Which English king was executed during the English Civil War?","Charles I","Henry VIII","Charles I"],
+            ["Which empire ruled the area of modern-day Iran before the Islamic conquest?","Sassanid Empire","Achaemenid Empire","Sassanid Empire"],
+            ["Which treaty in 1494 divided the newly discovered lands outside Europe between Spain and Portugal?","Treaty of Tordesillas","Treaty of Paris","Treaty of Tordesillas"],
+            ["Who was the Carthaginian general who crossed the Alps with elephants to fight Rome?","Hannibal","Scipio Africanus","Hannibal"],
+            ["Which dynasty ruled China during its last imperial period before 1912?","Qing Dynasty","Ming Dynasty","Qing Dynasty"],
+            ["Which European conflict lasted from 1618 to 1648 involving most of Central Europe?","Thirty Years’ War","Seven Years’ War","Thirty Years’ War"],
+            ["Which revolution in 1959 brought Fidel Castro to power?","Cuban Revolution","Mexican Revolution","Cuban Revolution"],
+            ["Which treaty formally ended the war between the U.S. and Spain in 1898?","Treaty of Paris","Treaty of Versailles","Treaty of Paris"],
+            ["Which empire did Suleiman the Magnificent lead?","Ottoman Empire","Mughal Empire","Ottoman Empire"],
+            ["Which philosopher’s ideas influenced the American Declaration of Independence?","John Locke","Thomas Hobbes","John Locke"]
+        ]
+    },
+    "Language": {
+        "easy": [
+            ["Which word is a synonym of 'big'?","Large","Small","Large"],
+            ["Which is an antonym of 'happy'?","Sad","Joyful","Sad"],
+            ["Which word is a noun?","Table","Run","Table"],
+            ["Which word is a verb?","Run","Chair","Run"],
+            ["Which word is spelled correctly?","Necessary","Neccessary","Necessary"],
+            ["Which word means the same as 'fast'?","Quick","Slow","Quick"],
+            ["Which word is an adjective?","Blue","Jump","Blue"],
+            ["Which is the plural form of 'mouse'?","Mice","Mouses","Mice"],
+            ["Which word refers to a type of fruit?","Apple","Carrot","Apple"],
+            ["Which word is a preposition?","Under","Sing","Under"]
+        ],
+        "medium": [
+            ["Which word means 'fear of heights'?","Acrophobia","Arachnophobia","Acrophobia"],
+            ["Which word is derived from Latin for 'to write'?","Script","Telephone","Script"],
+            ["Which is the past tense of 'go'?","Went","Gone","Went"],
+            ["Which word means 'study of the earth'?","Geology","Biology","Geology"],
+            ["Which is the correct spelling?","Definitely","Definately","Definitely"],
+            ["Which word refers to a small book?","Pamphlet","Novel","Pamphlet"],
+            ["Which word means 'fear of spiders'?","Arachnophobia","Hydrophobia","Arachnophobia"],
+            ["Which word is derived from Greek meaning 'life'?","Biology","Physics","Biology"],
+            ["Which word is a synonym for 'ancient'?","Antique","Modern","Antique"],
+            ["Which word is an antonym of 'increase'?","Decrease","Grow","Decrease"]
+        ],
+        "hard": [
+            ["Is the word 'fungus' from Greek or Latin?","Latin","Greek","Latin"],
+            ["Which word means 'one who studies stars'?","Astronomer","Astrologer","Astronomer"],
+            ["Which word is a homonym of 'lead'?","Lead (metal)","Read","Lead (metal)"],
+            ["Which word is derived from Latin meaning 'to love'?","Amorous","Hostile","Amorous"],
+            ["Which word means 'fear of enclosed spaces'?","Claustrophobia","Acrophobia","Claustrophobia"],
+            ["Which word is a synonym of 'benevolent'?","Kind","Malevolent","Kind"],
+            ["Which word is derived from Greek meaning 'word' or 'speech'?","Logos","Pathos","Logos"],
+            ["Which word is an antonym of 'scarce'?","Abundant","Rare","Abundant"],
+            ["Which word means 'study of language'?","Linguistics","Philology","Linguistics"],
+            ["Which word refers to a sudden, widespread occurrence?","Epidemic","Pandemic","Epidemic"]
+        ],
+        "extreme": [
+            ["Is the word 'philosophy' of Greek or Latin origin?","Greek","Latin","Greek"],
+            ["Which word is derived from Latin meaning 'to carry'?","Transport","Import","Transport"],
+            ["Which word means 'fear of water'?","Hydrophobia","Aquaphobia","Hydrophobia"],
+            ["Which word is derived from Greek meaning 'measure'?","Meter","Kilogram","Meter"],
+            ["Which word is an antonym of 'obscure'?","Clear","Cryptic","Clear"],
+            ["Which word is derived from Latin meaning 'to write or record'?","Scriptorium","Scribe","Scribe"],
+            ["Is the word 'encyclopedia' Greek or Latin in origin?","Greek","Latin","Greek"],
+            ["Which word refers to a study of human societies and cultures?","Anthropology","Sociology","Anthropology"],
+            ["Which word is a synonym for 'ephemeral'?","Temporary","Permanent","Temporary"],
+            ["Which word is derived from Greek meaning 'self'?","Autobiography","Autonomy","Autonomy"]
+        ]
+    },
+    "Culture": {
+        "easy": [
+            ["Who painted the Mona Lisa?","Leonardo da Vinci","Vincent van Gogh","Leonardo da Vinci"],
+            ["Who wrote 'Romeo and Juliet'?","William Shakespeare","Jane Austen","William Shakespeare"],
+            ["Who composed 'Fur Elise'?","Ludwig van Beethoven","Johann Sebastian Bach","Ludwig van Beethoven"],
+            ["Which famous painting shows melting clocks?","The Persistence of Memory","Starry Night","The Persistence of Memory"],
+            ["Which novel features the character Elizabeth Bennet?","Pride and Prejudice","Great Expectations","Pride and Prejudice"],
+            ["Which instrument has black and white keys and is often used in classical music?","Piano","Violin","Piano"],
+            ["Which sculpture is located in Florence and depicts David?","David by Michelangelo","The Thinker by Rodin","David by Michelangelo"],
+            ["Which painting is famous for a starry sky over a small town?","Starry Night","The Night Watch","Starry Night"],
+            ["Which composer wrote the 9th Symphony, including 'Ode to Joy'?","Beethoven","Mozart","Beethoven"],
+            ["Which author wrote 'Oliver Twist'?","Charles Dickens","Mark Twain","Charles Dickens"]
+        ],
+        "medium": [
+            ["Which artist is known for painting 'The Scream'?","Edvard Munch","Claude Monet","Edvard Munch"],
+            ["Which composer is famous for the opera 'The Magic Flute'?","Mozart","Beethoven","Mozart"],
+            ["Which author wrote 'Wuthering Heights'?","Emily Brontë","Charlotte Brontë","Emily Brontë"],
+            ["Which painting depicts a woman with an enigmatic smile?","Mona Lisa","Girl with a Pearl Earring","Mona Lisa"],
+            ["Which architectural style is characterized by pointed arches and flying buttresses?","Gothic","Baroque","Gothic"],
+            ["Which painter is associated with Impressionism and painted 'Water Lilies'?","Claude Monet","Vincent van Gogh","Claude Monet"],
+            ["Which novel is set on the island of Pemberley?","Pride and Prejudice","Jane Eyre","Pride and Prejudice"],
+            ["Which composer wrote 'The Four Seasons'?","Antonio Vivaldi","Johann Sebastian Bach","Antonio Vivaldi"],
+            ["Which artist is famous for the painting 'Guernica'?","Pablo Picasso","Salvador Dali","Pablo Picasso"],
+            ["Which literary work begins with 'Call me Ishmael'?","Moby-Dick","Great Expectations","Moby-Dick"]
+        ],
+        "hard": [
+            ["Which Italian Renaissance painter created 'The Birth of Venus'?","Sandro Botticelli","Raphael","Sandro Botticelli"],
+            ["Which Russian composer wrote 'Swan Lake'?","Pyotr Ilyich Tchaikovsky","Igor Stravinsky","Pyotr Ilyich Tchaikovsky"],
+            ["Which author wrote 'Crime and Punishment'?","Fyodor Dostoevsky","Leo Tolstoy","Fyodor Dostoevsky"],
+            ["Which painting technique uses small dots of color to form an image?","Pointillism","Fresco","Pointillism"],
+            ["Which Baroque artist is famous for dramatic use of light and shadow?","Caravaggio","Rembrandt","Caravaggio"],
+            ["Which novel features the character Heathcliff?","Wuthering Heights","Jane Eyre","Wuthering Heights"],
+            ["Which composer wrote the 'Moonlight Sonata'?","Ludwig van Beethoven","Franz Schubert","Ludwig van Beethoven"],
+            ["Which French Impressionist painted 'Ballet Rehearsal'?","Edgar Degas","Pierre-Auguste Renoir","Edgar Degas"],
+            ["Which literary work is a dystopian novel by George Orwell?","1984","Brave New World","1984"],
+            ["Which artist is associated with Cubism?","Pablo Picasso","Henri Matisse","Pablo Picasso"]
+        ],
+        "extreme": [
+            ["Which composer wrote the 'Goldberg Variations'?","Johann Sebastian Bach","Antonio Vivaldi","Johann Sebastian Bach"],
+            ["Which painter is known for the 'Blue Period'?","Pablo Picasso","Edvard Munch","Pablo Picasso"],
+            ["Which novel explores themes of totalitarianism and is set in Oceania?","1984","Fahrenheit 451","1984"],
+            ["Which artist created the ceiling of the Sistine Chapel?","Michelangelo","Raphael","Michelangelo"],
+            ["Which opera composer is known for 'Carmen'?","Georges Bizet","Giuseppe Verdi","Georges Bizet"],
+            ["Which literary work features the character Captain Ahab?","Moby-Dick","Treasure Island","Moby-Dick"],
+            ["Which painting style emphasizes geometric shapes and abstraction?","Cubism","Surrealism","Cubism"],
+            ["Which composer wrote 'Boléro'?","Maurice Ravel","Claude Debussy","Maurice Ravel"],
+            ["Which author wrote 'One Hundred Years of Solitude'?","Gabriel García Márquez","Jorge Luis Borges","Gabriel García Márquez"],
+            ["Which Italian Renaissance city is associated with the Medici family and many famous artworks?","Florence","Venice","Florence"]
+        ]
+    },
+    "Estimation": {
+        "easy": [
+            ["Which is heavier: 1 kilogram of feathers or 1 kilogram of iron?","Same","Iron","Same"],
+            ["Which contains more water: a liter of water or a liter of milk?","Same","Milk","Same"],
+            ["Which is longer: 1 meter or 100 centimeters?","Same","1 meter","Same"],
+            ["Which is faster: a cheetah running at top speed or a car at 50 km/h?","Cheetah","Car","Cheetah"],
+            ["Which is colder: ice at 0°C or water at 0°C?","Same","Ice","Same"],
+            ["Which is larger: a square meter or a square yard?","Square meter","Square yard","Square meter"],
+            ["Which has more calories: an apple or a slice of bread?","Depends","Slice of bread","Slice of bread"],
+            ["Which is more: 1 liter or 1000 milliliters?","Same","1 liter","Same"],
+            ["Which is longer: the Nile or the Amazon?","Nile","Amazon","Nile"],
+            ["Which is bigger in area: Texas or France?","Texas","France","Texas"]
+        ],
+        "medium": [
+            ["Which is denser: water or olive oil?","Water","Olive oil","Water"],
+            ["Which contains more atoms: a gram of hydrogen or a gram of oxygen?","Hydrogen","Oxygen","Hydrogen"],
+            ["Which is faster: light in air or light in water?","Air","Water","Air"],
+            ["Which is more numerous: humans on Earth or chickens?","Humans","Chickens","Chickens"],
+            ["Which is hotter: boiling water or a candle flame?","Boiling water","Candle flame","Candle flame"],
+            ["Which has more mass: a cube of iron or a cube of wood of the same size?","Iron","Wood","Iron"],
+            ["Which is heavier: 1 liter of mercury or 1 liter of water?","Mercury","Water","Mercury"],
+            ["Which contains more sugar: a banana or a teaspoon of sugar?","Banana","Teaspoon","Banana"],
+            ["Which is larger: the surface area of a football field or a basketball court?","Football field","Basketball court","Football field"],
+            ["Which contains more energy per gram: butter or sugar?","Butter","Sugar","Butter"]
+        ],
+        "hard": [
+            ["Which falls faster in air ignoring air resistance: a feather or a stone?","Stone","Feather","Stone"],
+            ["Which contains more nitrogen: the atmosphere or all human bodies combined?","Atmosphere","Humans","Atmosphere"],
+            ["Which produces more energy per kilogram: coal or natural gas?","Coal","Natural Gas","Natural Gas"],
+            ["Which is larger: the Sahara Desert or the Amazon Rainforest?","Sahara Desert","Amazon Rainforest","Sahara Desert"],
+            ["Which is more: the number of grains of sand on Earth or stars in the Milky Way?","Sand","Stars","Sand"],
+            ["Which takes longer to travel: light from the Sun to Earth or light from the Moon to Earth?","Sun","Moon","Sun"],
+            ["Which has higher pressure: a diver 10 meters underwater or a person at sea level?","Diver","Sea level","Diver"],
+            ["Which contains more water: all rivers combined or all lakes combined?","Rivers","Lakes","Lakes"],
+            ["Which has more energy: a gram of TNT or a gram of olive oil?","TNT","Olive oil","TNT"],
+            ["Which converts sunlight into energy more efficiently on average: plants or solar panels?","Plants","Solar panels","Solar panels"]
+        ],
+        "extreme": [
+            ["Which is wider: Australia or the Moon?","Australia","Moon","Moon"],
+            ["Are there more stars in our galaxy or trees on Earth?","Stars","Trees","Trees"],
+            ["Does a gram of olive oil contain more chemical potential energy than a gram of TNT?","Yes","No","No"],
+            ["Are plants more efficient than the average solar panel?","Yes","No","No"],
+            ["Which contains more matter: all humans combined or the atmosphere?","Humans","Atmosphere","Atmosphere"],
+            ["Which would weigh more: the total biomass of all ants or all humans?","Ants","Humans","Ants"],
+            ["Which is larger: the volume of Earth's oceans or the volume of the Moon?","Oceans","Moon","Moon"],
+            ["Which has more cells: a human body or all trees on Earth?","Humans","Trees","Humans"],
+            ["Which produces more power: a human running at full speed or an average solar panel in direct sun?","Human","Solar panel","Solar panel"],
+            ["Which contains more gold: all gold mined by humans or all gold in Earth's crust?","Mined gold","Earth's crust","Earth's crust"]
+        ]
+    }
+
+
+
+}

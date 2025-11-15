@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Overconfidence Test</title>
+<style>
+body { font-family: sans-serif; max-width: 700px; margin: 40px auto; line-height: 1.5; color: #222; }
+h1, h2, h3 { font-weight: 600; margin-bottom: 10px; }
+#welcome { text-align: center; margin-top: 60px; }
+button { padding: 10px 20px; background:#222; color:#fff; border:none; cursor:pointer; font-size:16px; }
+button:hover { background:#444; }
+#container { display:none; margin-top:40px; }
+#result { display:none; margin-top:40px; }
+#question { font-size:1.3em; margin:20px 0; }
+.slider { width:100%; margin:20px 0; }
+#ans_labels { display:flex; justify-content:space-between; font-weight:600; }
+#navButtons { margin-top:30px; display:flex; justify-content:space-between; }
+.bigBar { height:30px; background:#ddd; border:1px solid #000; position:relative; }
+.bigBarFill { height:100%; background:#4CAF50; }
+#overallStats { margin-top:20px; padding:15px; border:1px solid #ccc; border-radius:4px; background:#f8f8f8; }
+.barHolder { margin-bottom:15px; }
+.bar { height:18px; background:#ccc; border:1px solid #666; position:relative; }
+.subBar { height:100%; background:#4CAF50; }
+.barLabel { display:flex; align-items:center; gap:10px; }
+.explain { margin-top:20px; color:#555; font-size:0.95em; }
+#binGraph { margin-top:20px; border:1px solid #ccc; border-radius:4px; background:#f8f8f8; padding: 15px;}
+</style>
+</head>
+<body>
+<div id="welcome">
+<h1>Overconfidence Test</h1>
+<p>This test evaluates how well your confidence matches reality. For each question, move the slider toward the answer you believe is correct and by how much. Center means 50% (a pure guess). Extreme ends mean near certainty.</p>
+<button onclick="startTest()">Start</button>
+</div>
+
+<div id="container">
+<div id="qnum"></div>
+<div id="question"></div>
+<input type="range" min="0" max="100" value="50" id="confSlider" class="slider">
+<div id="ans_labels">
+<span id="leftLabel"></span>
+<span id="rightLabel"></span>
+</div>
+<div id="navButtons">
+<button onclick="prevQ()">Previous</button>
+<button onclick="nextQ()">Next</button>
+</div>
+<div class="explain">
+• Slider at 50 = no preference (50/50).<br>
+• Slider at 70 = 70% confidence left answer is correct.<br>
+• Slider at 20 = 80% confidence right answer is correct.<br>
+The distance from the nearest edge represents confidence.
+</div>
+</div>
+
+<div id="result">
+<h2>Your Results</h2>
+<div id="resultContent"></div>
+<h3>Overall Accuracy and Confidence</h3>
+<div id="overallStats">
+<h4>Accuracy: <span id="accuracyValue"></span></h4>
+<div class="bigBar"><div class="bigBarFill" id="accuracyBar"></div></div>
+<h4>Mean Confidence: <span id="confidenceValue"></span></h4>
+<div class="bigBar"><div class="bigBarFill" id="confidenceBar"></div></div>
+</div>
+<h3>Calibration by Confidence Bin</h3>
+<div class="explain">
+Each group shows expected confidence vs. actual accuracy for that confidence range.<br>
+Blue bar = expected confidence level (midpoint of range).<br>
+Green bar = actual accuracy achieved.
+</div>
+<div id="binGraph"></div>
+<div id="final_result"></div>
+</div>
+
+<script>
+// JS stays same
+    const questionPath = 'questions.json'; // Path to your questions JSON file
+        var questions = null;
+        var categories = null;
+        fetch(questionPath)
+        .then(response => response.json())
+        .then(data => {
+            questions = data;
+            categories = Object.keys(data);
+        })
+        .catch(error => {
+            console.error('Error loading questions:', error);
+        });
+
+
+        let categoryAccuracy = {};
+
+        var alreadySeenQuestions = new Set();
+
+        var currentQuestion = null;
+        
+
+        let idx = -1;
+        let answers = Array(40).fill(null); // Store answers and confidence
+
+        function startTest(){
+            document.getElementById("welcome").style.display="none";
+            document.getElementById("container").style.display="block";
+            nextQ(true);
+        }
+
+        function loadQ(q){
+            // shuffle options. half should have a on left, half b on left
+            const isSwapped = Math.random() < 0.5;
+            if (isSwapped){
+                var temp = q;
+                q = {q: temp.q, a: temp.b, b: temp.a, correct: temp.correct === 'a' ? 'b' : 'a'};
+            }
+            currentQuestion = q;
+            document.getElementById("qnum").textContent = (idx+1) + "/" + 40;
+            document.getElementById("question").textContent = q.q;
+            document.getElementById("leftLabel").textContent = q.a;
+            document.getElementById("rightLabel").textContent = q.b;
+            document.getElementById("confSlider").value = answers[idx] === null ? 50 : answers[idx];
+        }
+
+        function saveCurrent(){ 
+            const answerBar = parseInt(document.getElementById("confSlider").value);
+            const answer = answerBar >= 50 ? 'b' : 'a';
+            const certainty = Math.max(answerBar, 100 - answerBar);
+            const isCorrect = (answer === currentQuestion.correct);
+            categoryAccuracy[randomCategory] = categoryAccuracy[randomCategory] || { correct: 0, total: 0 };
+            categoryAccuracy[randomCategory].total++;
+            if(isCorrect) categoryAccuracy[randomCategory].correct++;
+            answers[idx] = { answer, certainty, isCorrect };
+            console.log("Saved answer for Q"+(idx+1)+":", answers[idx]);
+
+        }
+
+        function nextQ(start=false){
+            if(!start) saveCurrent();
+            if(idx >= 39){
+                // Show results after 40 questions
+                finish();
+            }
+            else { 
+                idx++;
+                randomCategory = categories[Math.floor(Math.random() * categories.length)];
+                var accuracyDataHere = categoryAccuracy[randomCategory];
+                if (!accuracyDataHere) {
+                    accuracyDataHere = { correct: 0, total: 0 };
+                }
+
+                var acc = accuracyDataHere.correct / accuracyDataHere.total || 0.7;
+                acc -= 0.5; // this is random guessing
+                acc *= 2; // scale to 0-1
+                acc = Math.min(Math.max(acc, 0), 1); // Clamp between 0 and 1
+                console.log("Category:", randomCategory, "Accuracy:", acc);
+                const difficulties = ['easy', 'medium', 'hard', 'extreme'];
+                var difficultyIndex = Math.floor(acc * (difficulties.length - 1));
+                //clamp
+                difficultyIndex = Math.min(Math.max(difficultyIndex, 0), difficulties.length - 1);
+
+                var nextDifficulty = difficulties[difficultyIndex];
+                console.log("Selected difficulty:", nextDifficulty);
+                const qList = questions[randomCategory][nextDifficulty];
+                var q = qList[Math.floor(Math.random() * qList.length)];
+                for (let i = 0; i < 30; i++) {
+                    if (alreadySeenQuestions.has(q[0])) {
+                        q = qList[Math.floor(Math.random() * qList.length)];
+                    }else {
+                        alreadySeenQuestions.add(q[0]);
+                        break;
+                    }
+                }
+                correct = (q[2] === q[3]) ? "b" : "a";
+                loadQ({q: q[0], a: q[1], b: q[2], correct: correct});
+
+
+
+            }
+        }
+
+        function finish(){
+            document.getElementById("container").style.display="none";
+            document.getElementById("result").style.display="block";
+            displayResults();
+        }
+
+        function displayResults(){
+            const resultDiv = document.getElementById("result");
+
+            const correctAnswers = answers.filter(a => a.isCorrect);
+            const incorrectAnswers = answers.filter(a => !a.isCorrect);
+            var totalCorrectCertainty = 0;
+            var totalIncorrectCertainty = 0;
+            correctAnswers.forEach(a => { totalCorrectCertainty += a.certainty; });
+            incorrectAnswers.forEach(a => { totalIncorrectCertainty += a.certainty; });
+            const avgCorrectCertainty = correctAnswers.length ? (totalCorrectCertainty / correctAnswers.length).toFixed(2) : 0;
+            const avgIncorrectCertainty = incorrectAnswers.length ? (totalIncorrectCertainty / incorrectAnswers.length).toFixed(2) : 0;
+            const avgOverallCertainty = answers.length ? (totalCorrectCertainty + totalIncorrectCertainty) / answers.length : 0;
+            const overallAccuracy = ((correctAnswers.length / answers.length) * 100).toFixed(2);
+
+            const overconfidence = (avgOverallCertainty - overallAccuracy).toFixed(2);
+
+            const accuracyBar = document.getElementById("accuracyBar");
+            const confidenceBar = document.getElementById("confidenceBar");
+            // make confidence bar blue
+            confidenceBar.style.background = "#2196F3";
+            accuracyBar.style.width = overallAccuracy + "%";
+            confidenceBar.style.width = avgOverallCertainty + "%";
+
+            document.getElementById("accuracyValue").textContent = overallAccuracy + "%";
+            document.getElementById("confidenceValue").textContent = avgOverallCertainty.toFixed(2) + "%";
+
+            const finalResultDiv = document.getElementById("final_result");
+            let finalMessage = "";
+            if(overconfidence > 10){
+                finalMessage = `<h3>Your confidence exceeded your accuracy by ${overconfidence} percentage points, indicating overconfidence.</h3>`;
+            } else if(overconfidence < -10){
+                finalMessage = `<h3>Your accuracy exceeded your confidence by ${-overconfidence} percentage points, indicating underconfidence.</h3>`;
+            } else {
+                finalMessage = `<h3>Your confidence closely matched your accuracy,  indicating good calibration.</h3>`;
+                finalMessage += `<p>The difference is exactly ${overconfidence} percentage points.</p>`;
+            }
+            finalMessage += `<p>Your average confidence for correct answers was ${avgCorrectCertainty}%, and for incorrect answers was ${avgIncorrectCertainty}%.</p>`;
+
+            finalResultDiv.innerHTML = finalMessage;
+
+            // split data into bins
+            const bins = [50, 60, 70, 80, 90]; // bin minimums
+            let binData = bins.map(bin => ({bin: bin, correct:0, total:0}));
+            answers.forEach(a => {
+                for(let i=bins.length-1; i>=0; i--){
+                    if(a.certainty >= bins[i]){
+                        binData[i].total++;
+                        if(a.isCorrect) binData[i].correct++;
+                        //add confidence
+                        binData[i].totalConfidence = (binData[i].totalConfidence || 0) + a.certainty;
+                        break;
+                    }
+                }
+            });
+            console.log(binData);
+            //display as graph
+            const graphDiv = document.getElementById("binGraph");
+            for(const bin of binData){
+                const expectedConfidence = bin.totalConfidence ? (bin.totalConfidence / bin.total) : bin.bin + 4.5; // midpoint of range
+                const actualAccuracy = bin.total ? ((bin.correct/bin.total)*100) : 0;
+                
+                const binContainer = document.createElement("div");
+                binContainer.classList.add("binContainer");
+                binContainer.style.marginBottom = "20px";
+                
+                // Bin label
+                const binLabel = document.createElement("div");
+                binLabel.textContent = bin.bin + "% - " + (bin.bin+9) + "% (" + bin.total + " answers)";
+                binLabel.style.fontWeight = "600";
+                binLabel.style.marginBottom = "8px";
+                binContainer.appendChild(binLabel);
+                
+                
+                // Accuracy bar (actual)
+                const accuracyRow = document.createElement("div");
+                accuracyRow.style.display = "flex";
+                accuracyRow.style.alignItems = "center";
+                
+                const accuracyLabel = document.createElement("span");
+                accuracyLabel.textContent = "Accuracy:";
+                accuracyLabel.style.width = "80px";
+                accuracyLabel.style.fontSize = "0.9em";
+                accuracyLabel.style.color = "#666";
+                
+                const accuracyBar = document.createElement("div");
+                accuracyBar.style.height = "18px";
+                accuracyBar.style.background = "#e0e0e0";
+                accuracyBar.style.border = "1px solid #999";
+                accuracyBar.style.position = "relative";
+                accuracyBar.style.width = "200px";
+                accuracyBar.style.marginLeft = "10px";
+                accuracyBar.style.marginRight = "10px";
+                
+                const accuracyFill = document.createElement("div");
+                accuracyFill.style.height = "100%";
+                accuracyFill.style.background = "#4CAF50";
+                accuracyFill.style.width = actualAccuracy + "%";
+                accuracyBar.appendChild(accuracyFill);
+                
+                const accuracyValue = document.createElement("span");
+                accuracyValue.textContent = actualAccuracy.toFixed(1) + "%";
+                accuracyValue.style.fontSize = "0.9em";
+                accuracyValue.style.color = "#4CAF50";
+                accuracyValue.style.fontWeight = "600";
+                
+                accuracyRow.appendChild(accuracyLabel);
+                accuracyRow.appendChild(accuracyBar);
+                accuracyRow.appendChild(accuracyValue);
+
+
+                // Confidence bar (expected)
+                const confidenceRow = document.createElement("div");
+                confidenceRow.style.display = "flex";
+                confidenceRow.style.alignItems = "center";
+                confidenceRow.style.marginBottom = "5px";
+                
+                const confidenceLabel = document.createElement("span");
+                confidenceLabel.textContent = "Confidence:";
+                confidenceLabel.style.width = "80px";
+                confidenceLabel.style.fontSize = "0.9em";
+                confidenceLabel.style.color = "#666";
+                
+                const confidenceBar = document.createElement("div");
+                confidenceBar.style.height = "18px";
+                confidenceBar.style.background = "#e0e0e0";
+                confidenceBar.style.border = "1px solid #999";
+                confidenceBar.style.position = "relative";
+                confidenceBar.style.width = "200px";
+                confidenceBar.style.marginLeft = "10px";
+                confidenceBar.style.marginRight = "10px";
+                
+                const confidenceFill = document.createElement("div");
+                confidenceFill.style.height = "100%";
+                confidenceFill.style.background = "#2196F3";
+                confidenceFill.style.width = expectedConfidence + "%";
+                confidenceBar.appendChild(confidenceFill);
+                
+                const confidenceValue = document.createElement("span");
+                confidenceValue.textContent = expectedConfidence.toFixed(1) + "%";
+                confidenceValue.style.fontSize = "0.9em";
+                confidenceValue.style.color = "#2196F3";
+                confidenceValue.style.fontWeight = "600";
+                
+                confidenceRow.appendChild(confidenceLabel);
+                confidenceRow.appendChild(confidenceBar);
+                confidenceRow.appendChild(confidenceValue);
+                
+                binContainer.appendChild(accuracyRow);
+                binContainer.appendChild(confidenceRow);
+                graphDiv.appendChild(binContainer);
+            }
+
+
+        }
+
+</script>
+</body>
+</html>
