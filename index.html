@@ -30,7 +30,8 @@ button:hover { background:#444; }
 <div id="welcome">
 <h1>Overconfidence Test</h1>
 <p>This test evaluates how well your confidence matches reality. For each question, move the slider toward the answer you believe is correct and by how much. Center means 50% (a pure guess). Extreme ends mean near certainty.</p>
-<button onclick="startTest()">Start</button>
+<button onclick="startTest(40)">Start 40</button>
+<button onclick="startTest(20)">Start 20</button>
 </div>
 
 <div id="container">
@@ -101,11 +102,14 @@ let categoryScore = {};
         
 
         let idx = -1;
-        let answers = Array(40).fill(null); // Store answers and confidence
+        var answers = Array(40).fill(null); // Store answers and confidence
+        var questionCount = 40
 
-        function startTest(){
+        function startTest( qcount = 40){
             document.getElementById("welcome").style.display="none";
             document.getElementById("container").style.display="block";
+            answers = Array(qcount).fill(null);
+            questionCount = qcount;
             nextQ(true);
         }
 
@@ -117,7 +121,7 @@ let categoryScore = {};
                 q = {q: temp.q, a: temp.b, b: temp.a, correct: temp.correct === 'a' ? 'b' : 'a'};
             }
             currentQuestion = q;
-            document.getElementById("qnum").textContent = (idx+1) + "/" + 40;
+            document.getElementById("qnum").textContent = (idx+1) + "/" + questionCount;
             document.getElementById("question").textContent = q.q;
             document.getElementById("leftLabel").textContent = q.a;
             document.getElementById("rightLabel").textContent = q.b;
@@ -145,7 +149,7 @@ let categoryScore = {};
 function nextQ(start=false){
     if(!start) saveCurrent();
 
-    if(idx >= 39){
+    if(idx >= questionCount-1){
         finish();
         return;
     }
