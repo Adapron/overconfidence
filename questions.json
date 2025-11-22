@@ -301,15 +301,11 @@
     },
     "Estimation": {
         "easy": [
-            ["Which is heavier: 1 kilogram of feathers or 1 kilogram of iron?","Same","Iron","Same"],
-            ["Which contains more water: a liter of water or a liter of milk?","Same","Milk","Same"],
-            ["Which is longer: 1 meter or 100 centimeters?","Same","1 meter","Same"],
             ["Which is faster: a cheetah running at top speed or a car at 50 km/h?","Cheetah","Car","Cheetah"],
-            ["Which is colder: ice at 0°C or water at 0°C?","Same","Ice","Same"],
             ["Which is larger: a square meter or a square yard?","Square meter","Square yard","Square meter"],
-            ["Which has more calories: an apple or a slice of bread?","Depends","Slice of bread","Slice of bread"],
-            ["Which is more: 1 liter or 1000 milliliters?","Same","1 liter","Same"],
+            ["Which has more calories: an apple or a slice of bread?","Apple","Slice of bread","Slice of bread"],
             ["Which is longer: the Nile or the Amazon?","Nile","Amazon","Nile"],
+            ["Which falls faster in air: a feather or a stone?","Stone","Feather","Stone"],
             ["Which is bigger in area: Texas or France?","Texas","France","Texas"]
         ],
         "medium": [
@@ -325,7 +321,6 @@
             ["Which contains more energy per gram: butter or sugar?","Butter","Sugar","Butter"]
         ],
         "hard": [
-            ["Which falls faster in air ignoring air resistance: a feather or a stone?","Stone","Feather","Stone"],
             ["Which contains more nitrogen: the atmosphere or all human bodies combined?","Atmosphere","Humans","Atmosphere"],
             ["Which produces more energy per kilogram: coal or natural gas?","Coal","Natural Gas","Natural Gas"],
             ["Which is larger: the Sahara Desert or the Amazon Rainforest?","Sahara Desert","Amazon Rainforest","Sahara Desert"],
