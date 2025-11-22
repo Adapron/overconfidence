@@ -317,6 +317,7 @@
             ["Which has more mass: a cube of iron or a cube of wood of the same size?","Iron","Wood","Iron"],
             ["Which is heavier: 1 liter of mercury or 1 liter of water?","Mercury","Water","Mercury"],
             ["Which contains more sugar: a banana or a teaspoon of sugar?","Banana","Teaspoon","Banana"],
+            ["Which has higher pressure: a diver 10 meters underwater or a person at sea level?","Diver","Sea level","Diver"],
             ["Which is larger: the surface area of a football field or a basketball court?","Football field","Basketball court","Football field"],
             ["Which contains more energy per gram: butter or sugar?","Butter","Sugar","Butter"]
         ],
@@ -326,7 +327,6 @@
             ["Which is larger: the Sahara Desert or the Amazon Rainforest?","Sahara Desert","Amazon Rainforest","Sahara Desert"],
             ["Which is more: the number of grains of sand on Earth or stars in the Milky Way?","Sand","Stars","Sand"],
             ["Which takes longer to travel: light from the Sun to Earth or light from the Moon to Earth?","Sun","Moon","Sun"],
-            ["Which has higher pressure: a diver 10 meters underwater or a person at sea level?","Diver","Sea level","Diver"],
             ["Which contains more water: all rivers combined or all lakes combined?","Rivers","Lakes","Lakes"],
             ["Which has more energy: a gram of TNT or a gram of olive oil?","TNT","Olive oil","TNT"],
             ["Which converts sunlight into energy more efficiently on average: plants or solar panels?","Plants","Solar panels","Solar panels"]
