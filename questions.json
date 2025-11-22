@@ -226,7 +226,7 @@
         ],
         "hard": [
             ["Is the word 'fungus' from Greek or Latin?","Latin","Greek","Latin"],
-            ["Which word means 'one who studies stars'?","Astronomer","Astrologer","Astronomer"],
+            ["Who studies the universe formally?","Astronomer","Astrologer","Astronomer"],
             ["Which word is a homonym of 'lead'?","Lead (metal)","Read","Lead (metal)"],
             ["Which word is derived from Latin meaning 'to love'?","Amorous","Hostile","Amorous"],
             ["Which word means 'fear of enclosed spaces'?","Claustrophobia","Acrophobia","Claustrophobia"],
