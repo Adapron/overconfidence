@@ -90,6 +90,10 @@ Green bar = actual accuracy achieved.
 
 
         let categoryAccuracy = {};
+let categoryScore = {}; 
+// structure: { catName: { score: 0 } }
+// score starts at 0, can drift negative or positive
+// difficulty derived from clamped 0–1 mapping of this score
 
         var alreadySeenQuestions = new Set();
 
