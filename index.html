@@ -121,61 +121,65 @@ Green bar = actual accuracy achieved.
         }
 
         function saveCurrent(){ 
-            const answerBar = parseInt(document.getElementById("confSlider").value);
-            const answer = answerBar >= 50 ? 'b' : 'a';
-            const certainty = Math.max(answerBar, 100 - answerBar);
-            const isCorrect = (answer === currentQuestion.correct);
-            categoryAccuracy[randomCategory] = categoryAccuracy[randomCategory] || { correct: 0, total: 0 };
-            categoryAccuracy[randomCategory].total++;
-            if(isCorrect) categoryAccuracy[randomCategory].correct++;
-            answers[idx] = { answer, certainty, isCorrect };
-            console.log("Saved answer for Q"+(idx+1)+":", answers[idx]);
+    const bar = parseInt(document.getElementById("confSlider").value);
+    const answer = bar >= 50 ? 'b' : 'a';
+    const conf = Math.max(bar, 100 - bar);  // 50–100
+    const isCorrect = (answer === currentQuestion.correct);
 
+    const c = randomCategory;
+    categoryScore[c] = categoryScore[c] || { score: 0 };
+
+    const delta = (conf - 50) / 50;  
+    // 0 at conf=50, 1 at conf=100
+
+    if(isCorrect) categoryScore[c].score += delta;
+    else categoryScore[c].score -= delta;
+
+    answers[idx] = { answer, certainty: conf, isCorrect };
+}
+
+function nextQ(start=false){
+    if(!start) saveCurrent();
+
+    if(idx >= 39){
+        finish();
+        return;
+    }
+
+    idx++;
+
+    randomCategory = categories[Math.floor(Math.random() * categories.length)];
+    const c = randomCategory;
+
+    if(!categoryScore[c]) categoryScore[c] = { score: 0 };
+
+    const raw = categoryScore[c].score;
+    // map raw score to 0–1 interval
+    // score -2 = 0, score 0 = 0.5, score +2 = 1
+    let acc = (raw + 2) / 4;
+    acc = Math.min(Math.max(acc, 0), 1);
+
+    const difficulties = ['easy', 'medium', 'hard', 'extreme'];
+    const dIndex = Math.floor(acc * (difficulties.length - 1));
+    const diff = difficulties[dIndex];
+
+    const qList = questions[c][diff];
+    let q = qList[Math.floor(Math.random() * qList.length)];
+
+    for (let i = 0; i < 30; i++) {
+        if (alreadySeenQuestions.has(q[0])) {
+            q = qList[Math.floor(Math.random() * qList.length)];
+        } else {
+            alreadySeenQuestions.add(q[0]);
+            break;
         }
+    }
 
-        function nextQ(start=false){
-            if(!start) saveCurrent();
-            if(idx >= 39){
-                // Show results after 40 questions
-                finish();
-            }
-            else { 
-                idx++;
-                randomCategory = categories[Math.floor(Math.random() * categories.length)];
-                var accuracyDataHere = categoryAccuracy[randomCategory];
-                if (!accuracyDataHere) {
-                    accuracyDataHere = { correct: 0, total: 0 };
-                }
-
-                var acc = accuracyDataHere.correct / accuracyDataHere.total || 0.7;
-                acc -= 0.5; // this is random guessing
-                acc *= 2; // scale to 0-1
-                acc = Math.min(Math.max(acc, 0), 1); // Clamp between 0 and 1
-                console.log("Category:", randomCategory, "Accuracy:", acc);
-                const difficulties = ['easy', 'medium', 'hard', 'extreme'];
-                var difficultyIndex = Math.floor(acc * (difficulties.length - 1));
-                //clamp
-                difficultyIndex = Math.min(Math.max(difficultyIndex, 0), difficulties.length - 1);
-
-                var nextDifficulty = difficulties[difficultyIndex];
-                console.log("Selected difficulty:", nextDifficulty);
-                const qList = questions[randomCategory][nextDifficulty];
-                var q = qList[Math.floor(Math.random() * qList.length)];
-                for (let i = 0; i < 30; i++) {
-                    if (alreadySeenQuestions.has(q[0])) {
-                        q = qList[Math.floor(Math.random() * qList.length)];
-                    }else {
-                        alreadySeenQuestions.add(q[0]);
-                        break;
-                    }
-                }
-                correct = (q[2] === q[3]) ? "b" : "a";
-                loadQ({q: q[0], a: q[1], b: q[2], correct: correct});
+    const correct = (q[2] === q[3]) ? "b" : "a";
+    loadQ({ q: q[0], a: q[1], b: q[2], correct });
+}
 
 
-
-            }
-        }
 
         function finish(){
             document.getElementById("container").style.display="none";
