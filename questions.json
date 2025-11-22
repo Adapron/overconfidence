@@ -83,7 +83,7 @@
             ["What is the main type of RNA that carries amino acids to the ribosome?","tRNA","mRNA","tRNA"],
             ["Which type of lens converges light rays?","Convex","Concave","Convex"],
             ["What is the pH of pure water at 25°C?","7","0","7"],
-            ["Which gas is a greenhouse gas but not directly involved in respiration?","Carbon dioxide","Oxygen","Carbon dioxide"],
+            ["Which gas is a greenhouse gas but not directly involved in respiration?","Carbon dioxide","Methane","Methane"],
             ["Which principle states that the pressure of a gas is inversely proportional to its volume at constant temperature?","Boyle's Law","Charles's Law","Boyle's Law"]
         ],
         "extreme": [
