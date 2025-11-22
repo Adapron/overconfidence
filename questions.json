@@ -68,7 +68,6 @@
             ["What is the law stating that energy cannot be created or destroyed?","Conservation of Energy","Newton's First Law","Conservation of Energy"],
             ["Which type of cell division produces gametes?","Meiosis","Mitosis","Meiosis"],
             ["What is the most abundant element in the universe?","Hydrogen","Oxygen","Hydrogen"],
-            ["Which organelle synthesizes proteins?","Ribosome","Golgi apparatus","Ribosome"],
             ["What is the main function of enzymes?","Catalyze chemical reactions","Store energy","Catalyze chemical reactions"],
             ["Which force acts between charged particles?","Electrostatic force","Gravitational force","Electrostatic force"],
             ["Which gas is released by plants during photosynthesis?","Oxygen","Carbon Dioxide","Oxygen"],
@@ -76,6 +75,7 @@
         ],
         "hard": [
             ["Which principle explains why ships float?","Archimedes’ Principle","Pascal's Law","Archimedes’ Principle"],
+            ["Which organelle synthesizes proteins?","Ribosome","Golgi apparatus","Ribosome"],
             ["What is the difference between an ionic and a covalent bond?","Ionic transfers electrons, covalent shares electrons","Both share electrons","Ionic transfers electrons, covalent shares electrons"],
             ["What is the second law of thermodynamics about?","Entropy increases in isolated systems","Energy is conserved","Entropy increases in isolated systems"],
             ["Which particle mediates the strong nuclear force?","Gluon","Photon","Gluon"],
